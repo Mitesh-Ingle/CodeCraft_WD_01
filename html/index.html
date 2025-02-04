@@ -1,64 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Solutions</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">CodeCraft Infotech</div>
-        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft Infotech - Landing Page</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="../assets/videos/about video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="../assets/icon/codecraft icon.jpg" alt="CodeCraft Infotech" class="nav-icon">
+            </a>
+        </div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-    </header>
+    </nav>
+
+    <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero-text">
-        <h1>Innovate Your Digital Presence</h1>
-        <p>Building modern, scalable, and user-friendly websites.</p>
-        <a href="#features" class="btn">Discover More</a>
-      </div>
-    </section>
-    <section id="features">
-      <h2>Our Features</h2>
-      <div class="features-grid">
-        <div class="feature-item">
-          <i class="fas fa-bolt"></i> Lightning Fast
+        <div class="hero-content">
+            <h1>Welcome to <span>CodeCraft Infotech</span></h1>
+            <p>We craft modern digital solutions for your business growth.</p>
+            <a href="#services" class="cta-button">Explore Services</a>
         </div>
-        <div class="feature-item">
-          <i class="fas fa-paint-brush"></i> Sleek Design
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>CodeCraft Infotech is a leading technology company specializing in web development, UI/UX design, and digital solutions.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-boxes">
+            <div class="service">
+                <img src="../assets/icons/web-development.png" alt="Web Development" class="service-icon">
+                <h3>Web Development</h3>
+                <p>We build modern, responsive, and high-performing websites.</p>
+            </div>
+            <div class="service">
+                <img src="../assets/icons/ui-ux.png" alt="UI/UX Design" class="service-icon">
+                <h3>UI/UX Design</h3>
+                <p>Designing user-friendly and visually appealing interfaces.</p>
+            </div>
+            <div class="service">
+                <img src="../assets/icons/seo.png" alt="SEO & Marketing" class="service-icon">
+                <h3>SEO & Marketing</h3>
+                <p>Optimizing your website for better reach and ranking.</p>
+            </div>
         </div>
-        <div class="feature-item">
-          <i class="fas fa-cogs"></i> Highly Customizable
-        </div>
-      </div>
     </section>
-    <section id="portfolio">
-      <h2>Our Work</h2>
-      <div class="portfolio-gallery">
-        <div class="portfolio-item"></div>
-        <div class="portfolio-item"></div>
-        <div class="portfolio-item"></div>
-      </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:info@codecraft.com">info@codecraft.com</a></p>
+        <p>Phone: +91 9876543210</p>
     </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Email: <a href="mailto:info@nextgen.com">info@nextgen.com</a></p>
-    </section>
+
+    <!-- Footer -->
     <footer>
-      <p>&copy; 2025 CodeCraft Infotech.  First Choice For Global Business.</p>
+        <p>© 2025 CodeCraft Infotech. All Rights Reserved.</p>
     </footer>
+
     <script src="../js/script.js"></script>
-  </body>
+</body>
 </html>
