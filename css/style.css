@@ -17,8 +17,8 @@ body {
 .navbar {
     position: fixed;
     width: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -31,6 +31,11 @@ body {
     color: white;
     font-weight: bold;
     letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+    color: #f2b632;
 }
 
 .navbar ul {
@@ -62,7 +67,7 @@ body {
     background: rgba(0, 0, 0, 0.9);
 }
 
-/* Hero Section with Background Image */
+/* Hero Section */
 header {
     height: 100vh;
     display: flex;
@@ -70,19 +75,19 @@ header {
     align-items: center;
     text-align: center;
     background: url('../assets/images/image2.webp') no-repeat center center/cover;
-    background-size: cover;
     color: white;
     position: relative;
     padding: 60px 20px;
 }
 
 .hero-content {
-    background-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     padding: 40px;
     border-radius: 15px;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
 }
 
 .hero-content h1 {
@@ -120,28 +125,12 @@ header {
     transform: translateY(-5px);
 }
 
-/* Centered Text Section */
-.center-text {
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: white;
-    padding: 40px;
-    margin: 20px 0;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.center-text p {
-    font-size: 1.6rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-}
-
 /* About Section */
 #about {
     padding: 80px 20px;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #eef2f3, #c3cfe2);
     text-align: center;
+    position: relative;
 }
 
 #about h2 {
@@ -151,13 +140,14 @@ header {
     color: #333;
 }
 
-/* Centering video and image containers */
+/* About Container */
 .about-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 .video-container {
@@ -168,45 +158,43 @@ header {
     align-items: center;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    overflow: hidden;
 }
 
-.image-container {
-    flex: 1;
+/* Video Icons */
+.icon-box {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
-.about-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.icon-box video {
+    width: 70px;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
 }
 
-#about p {
-    font-size: 1.1rem;
-    margin-top: 20px;
-    color: #666;
-}
-
-/* Services Section */
+.icon-box video:hover {
+    transform: scale(1.1);
+}/* Services Section */
 #services {
     display: flex;
     justify-content: center;
     gap: 30px;
     padding: 80px 20px;
     text-align: center;
+    flex-wrap: nowrap; /* Prevents wrapping */
 }
 
 .service-box {
     background: #fff;
     padding: 30px;
-    border-radius: 10px;
-    width: 30%;
+    border-radius: 15px;
+    width: calc(100% / 3 - 40px); /* Makes sure they fit in one row */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 250px; /* Ensures boxes don’t get too small */
 }
 
 .service-box img {
@@ -228,6 +216,23 @@ header {
 .service-box:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 992px) {
+    #services {
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    }
+
+    .service-box {
+        width: calc(50% - 20px); /* Two per row on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .service-box {
+        width: 100%; /* Stacks them on small screens */
+    }
 }
 
 /* Contact Section */
@@ -265,6 +270,19 @@ footer {
     background: #222;
     color: white;
     font-size: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive */
