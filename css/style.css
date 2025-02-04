@@ -1,307 +1,91 @@
-/* Global Styles */
-* {
+/* CSS */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    background: url("../assets/images/image2.webp") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+  
 
-body {
-    scroll-behavior: smooth;
-    background-color: #f5f5f5;
-    font-size: 16px;
-    color: #333;
-}
-
-/* Navbar */
 .navbar {
-    position: fixed;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    transition: background 0.3s ease;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
 }
 
-.navbar .logo {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-}
-
-.navbar .logo:hover {
-    color: #f2b632;
-}
-
-.navbar ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    gap: 30px;
+    list-style: none;
 }
 
-.navbar ul li {
-    display: inline;
-}
-
-.navbar ul li a {
+.nav-links li a {
     color: white;
-    text-decoration: none;
-    font-size: 18px;
     padding: 10px 20px;
-    border-radius: 25px;
-    transition: background 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 
-.navbar ul li a:hover {
-    background-color: #f2b632;
-    color: #333;
-}
-
-/* Scroll effect */
-.scrolled {
-    background: rgba(0, 0, 0, 0.9);
-}
-
-/* Hero Section */
-header {
+.hero {
+    background: url("../assets/images/hero-background.jpg") no-repeat center center/cover;
+    color: white;
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    background: url('../assets/images/image2.webp') no-repeat center center/cover;
-    color: white;
     position: relative;
-    padding: 60px 20px;
-}
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Optional: Adds a dark overlay */
+  }
+  
+  .hero-text {
+    position: relative;
+    z-index: 1;
+  }
+  
 
-.hero-content {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 15px;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 1s ease-in-out;
-}
-
-.hero-content h1 {
+.hero-text h1 {
     font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
-}
-
-.hero-content img {
-    width: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
 }
 
 .btn {
     background: #f2b632;
     color: black;
     padding: 12px 30px;
-    font-size: 1.2rem;
     border-radius: 30px;
-    text-decoration: none;
-    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.btn:hover {
-    background: #e1a01d;
-    transform: translateY(-5px);
-}
-
-/* About Section */
-#about {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #eef2f3, #c3cfe2);
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     text-align: center;
-    position: relative;
 }
 
-#about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* About Container */
-.about-container {
+.portfolio-gallery {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-top: 30px;
-    flex-wrap: wrap;
 }
 
-.video-container {
-    max-width: 600px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.portfolio-item {
+    width: 200px;
+    height: 150px;
+    background: white;
     border-radius: 10px;
-    overflow: hidden;
 }
 
-/* Video Icons */
-.icon-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.icon-box video {
-    width: 70px;
-    transition: transform 0.3s ease;
-    border-radius: 50%;
-}
-
-.icon-box video:hover {
-    transform: scale(1.1);
-}/* Services Section */
-#services {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 80px 20px;
-    text-align: center;
-    flex-wrap: nowrap; /* Prevents wrapping */
-}
-
-.service-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    width: calc(100% / 3 - 40px); /* Makes sure they fit in one row */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    min-width: 250px; /* Ensures boxes don’t get too small */
-}
-
-.service-box img {
-    width: 60px;
-    margin-bottom: 20px;
-}
-
-.service-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.service-box p {
-    font-size: 1.1rem;
-    color: #555;
-}
-
-.service-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure responsiveness */
-@media (max-width: 992px) {
-    #services {
-        flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    }
-
-    .service-box {
-        width: calc(50% - 20px); /* Two per row on tablets */
-    }
-}
-
-@media (max-width: 600px) {
-    .service-box {
-        width: 100%; /* Stacks them on small screens */
-    }
-}
-
-/* Contact Section */
-#contact {
-    padding: 60px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-#contact p {
-    font-size: 1.2rem;
-    color: #444;
-}
-
-#contact a {
-    color: #f2b632;
-    text-decoration: none;
-}
-
-#contact a:hover {
-    color: #e1a01d;
-    text-decoration: underline;
-}
-
-/* Footer */
 footer {
     text-align: center;
-    padding: 30px;
-    background: #222;
-    color: white;
-    font-size: 1rem;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .service-box {
-        width: 80%;
-    }
-
-    #services {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .hero-content {
-        padding: 30px;
-    }
+    padding: 20px;
+    background: black;
 }
